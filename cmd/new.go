@@ -18,8 +18,8 @@ var newCmd = &cobra.Command{
 	Use:   "new",
 	Short: "Create a new solution, will default to today",
 	Long:  ``,
-	RunE: func(cmd *cobra.Command, args []string) error {
-		return newSolution()
+	Run: func(cmd *cobra.Command, args []string) {
+		cobra.CheckErr(newSolution())
 	},
 }
 
@@ -28,6 +28,7 @@ func init() {
 }
 
 func newSolution() error {
+	fmt.Println("new solution")
 	if !viper.IsSet(configurationKeys.SolutionDirectory) {
 		fmt.Println("Please configure a solution directory before creating a new solution")
 		err := configuration.UseAsSolutionDirectoryPrompt()
@@ -41,6 +42,7 @@ func newSolution() error {
 	if err != nil {
 		return err
 	}
+
 	currentDirectory := path.Join(solutionsDirectory, fmt.Sprintf("%d", year), fmt.Sprintf("%d", day))
 	err = os.MkdirAll(currentDirectory, os.ModePerm)
 	if err != nil {

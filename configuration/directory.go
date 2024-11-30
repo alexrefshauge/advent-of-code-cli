@@ -1,7 +1,9 @@
 package configuration
 
 import (
+	"fmt"
 	"github.com/alexrefshauge/advent-of-code-cli/configurationKeys"
+	"github.com/spf13/cobra"
 	"os"
 
 	"github.com/manifoldco/promptui"
@@ -29,9 +31,11 @@ func UseAsSolutionDirectoryPrompt() error {
 	}
 
 	currentDir, err := os.Getwd()
+	fmt.Println(currentDir)
 	if err != nil {
 		return err
 	}
 	viper.Set(configurationKeys.SolutionDirectory, currentDir)
+	cobra.CheckErr(viper.WriteConfig())
 	return nil
 }
