@@ -5,4 +5,5 @@ const (
 	Year              = "year"
 	Day               = "day"
 	IgnoreDecember    = "ignoreDecember"
+	SessionCookie     = "sessionCookie"
 )

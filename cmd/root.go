@@ -12,8 +12,8 @@ var (
 
 	rootCmd = &cobra.Command{
 		Use:   "aoc",
-		Short: "Handle Advent of Code solutions (hello)",
-		Long:  `The AoC cli can be used to create and run Advent of Code solutions (hello)`,
+		Short: "Handle Advent of Code solutions",
+		Long:  `The AoC cli can be used to create and run Advent of Code solutions`,
 	}
 )
 
@@ -23,4 +23,5 @@ func Execute() {
 
 func init() {
 	rootCmd.PersistentFlags().StringP("config", "c", specifiedConfigFile, "Set config file")
+	rootCmd.PersistentFlags().Bool("today", false, "use Viper for configuration")
 }

@@ -1,19 +1,16 @@
 package cmd
 
-import (
-	"fmt"
-	"io"
-)
-
 const (
-	solutionFile = `package day%[1]d\n
+	solutionFile = `package day%[1]d
+
 func main() {
-	fmt.Printf("", %[1]d)
+	fmt.Printf("Running AoC day %%d solution\n", %[1]d)
 }
 `
-)
 
-func renderSolutionFile(day int8, file io.Writer) {
-	content := fmt.Sprintf(solutionFile, day)
-	file.Write([]byte(content))
-}
+	solutionTestFile = `package day%[1]d
+
+func Test_day%[1](t *testing.T) {}
+	
+)`
+)

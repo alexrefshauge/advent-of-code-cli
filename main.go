@@ -12,6 +12,8 @@ import (
 
 func main() {
 	configuration.Init()
-	fmt.Println(viper.AllKeys())
+	for _, key := range viper.AllKeys() {
+		fmt.Printf("%s: %v\n", key, viper.Get(key))
+	}
 	cmd.Execute()
 }

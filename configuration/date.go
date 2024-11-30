@@ -23,10 +23,9 @@ func GetDate() (int, int, error) {
 
 func SetDateToday() error {
 	today := time.Now()
-	if today.Month() != time.December && !viper.GetBool(configurationKeys.IgnoreDecember) {
+	if !viper.GetBool(configurationKeys.IgnoreDecember) && today.Month() != time.December {
 		return errors.New("ooops! Can't use today, since it is not December")
 	}
-	fmt.Println("hello world")
 	viper.Set(configurationKeys.Year, today.Year())
 	viper.Set(configurationKeys.Day, today.Day())
 	err := viper.WriteConfig()
