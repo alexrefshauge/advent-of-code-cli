@@ -85,5 +85,13 @@ func parseTestInput(input string) (string, string) {
 	}
 
 	return input[:i], input[i+2:]
+}
+
+func Benchmark_day%[1]d_part1(b *testing.B) {
+	part1(input)
+}
+
+func Benchmark_day%[1]d_part2(b *testing.B) {
+	part2(input)
 }`
 )
