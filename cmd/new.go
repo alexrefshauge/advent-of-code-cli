@@ -57,6 +57,8 @@ func newSolution() error {
 		today := time.Now()
 		year = today.Year()
 		day = today.Day()
+		viper.Set("year", year)
+		viper.Set("day", day)
 	}
 
 	currentDirectory := path.Join(solutionsDirectory, fmt.Sprintf("%d", year), fmt.Sprintf("day%d", day))
