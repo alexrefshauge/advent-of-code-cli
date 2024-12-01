@@ -105,6 +105,14 @@ func writeCode(dir string, day int) error {
 	if err != nil {
 		return err
 	}
+	err = os.WriteFile(path.Join(dir, "example1.txt"), make([]byte, 0), os.ModePerm)
+	if err != nil {
+		return err
+	}
+	err = os.WriteFile(path.Join(dir, "example2.txt"), make([]byte, 0), os.ModePerm)
+	if err != nil {
+		return err
+	}
 
 	return nil
 }
