@@ -25,7 +25,7 @@ func main() {
 	} else if part == 2 {
 		answer = part2(input)
 	} else {
-		panic(fmt.Errorf("unable to run part %%d", part))	
+		panic(fmt.Errorf("part must be 1 or 2 %%d", part))	
 	}
 
 	fmt.Println("Output:", answer)
