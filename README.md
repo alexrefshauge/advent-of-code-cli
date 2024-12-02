@@ -1,5 +1,14 @@
 # advent-of-code-cli
 
+# Installation
+## Using the go toolchain
+
+To install the CLI run: `go install github.com/alexrefshauge/advent-of-code-cli`
+
+Since it can become tedious to write `advent-of-code-cli` everytime, it is recommended to register an alias for the tool i.e. `aoc`
+
+Now run `advent-of-code-cli` in the terminal, this will also create a configuration file located at `$HOME/.aoc/config.yaml`
+
 # Configuration
 A configuration file `config.yaml` is plaed in your home directory in a `.aoc` directory.
 
