@@ -67,12 +67,12 @@ func Test_day1_part2(t *testing.T) {
 
 func innerTest(t *testing.T, input string, part int, solutionFunc func(string) string) {
 	if input == "" {
-		t.Fatalf("please provide example input (part %d)", part)
+		t.Fatalf("please provide example input (part %%d)", part)
 	}
 	in, out := parseTestInput(input)
 	answer := solutionFunc(in)
 	if answer != out {
-		t.Fatalf("wanted %s, got %s", out, answer)
+		t.Fatalf("wanted %%s, got %%s", out, answer)
 	}
 }
 
