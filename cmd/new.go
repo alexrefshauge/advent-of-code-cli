@@ -61,7 +61,7 @@ func newSolution() error {
 		viper.Set("day", day)
 	}
 
-	currentDirectory := path.Join(solutionsDirectory, fmt.Sprintf("%d", year), fmt.Sprintf("day%d", day))
+	currentDirectory := path.Join(solutionsDirectory, fmt.Sprintf("%d", year), fmt.Sprintf("day%02d", day))
 	err = os.MkdirAll(currentDirectory, os.ModePerm)
 	if err != nil {
 		return err
